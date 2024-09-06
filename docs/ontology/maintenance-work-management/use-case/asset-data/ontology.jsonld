@@ -1,0 +1,285 @@
+[
+  {
+    "@id": "http://purl.obolibrary.org/obo/BFO_0000111",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.obolibrary.org/obo/BFO_0000174",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/license",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/license": [
+      {
+        "@value": "Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,\n            Melinda Hodkiewicz\n\n            Permission is hereby granted, free of charge, to any person obtaining a copy of this\n            software and associated documentation files (the \"Software\"), to deal in the\n            Software without restriction, including without limitation the rights to use, copy,\n            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and\n            to permit persons to whom the Software is furnished to do so, subject to the following\n            conditions:\n            The above copyright notice and this permission notice shall be included in all copies or\n            substantial portions of the Software.\n\n            THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF\n            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\n            THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/maintenance-activity-classification-rules"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://purl.obolibrary.org/obo/BFO_0000111": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+      },
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+      },
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+      },
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+      },
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://purl.obolibrary.org/obo/BFO_0000174": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001"
+      },
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://purl.obolibrary.org/obo/BFO_0000174": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://purl.obolibrary.org/obo/BFO_0000174": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://purl.obolibrary.org/obo/BFO_0000174": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://purl.obolibrary.org/obo/BFO_0000174": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  }
+]

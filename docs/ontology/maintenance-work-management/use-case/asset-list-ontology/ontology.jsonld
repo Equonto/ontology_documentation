@@ -1,0 +1,229 @@
+[
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/license",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@value": "Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,\n            Melinda Hodkiewicz\n\n            Permission is hereby granted, free of charge, to any person obtaining a copy of this\n            software and associated documentation files (the \"Software\"), to deal in the\n            Software without restriction, including without limitation the rights to use, copy,\n            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and\n            to permit persons to whom the Software is furnished to do so, subject to the following\n            conditions:\n            The above copyright notice and this permission notice shall be included in all copies or\n            substantial portions of the Software.\n\n            THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF\n            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\n            THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://www.industrialontologies.org/core/"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Flowmeter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor"
+      },
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "Flow Meter"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Flowmeter"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Seal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Motor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Oil"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Pressure Switch"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor"
+      },
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "Switch"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Pressure Switch"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Pump, Centrifugal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Valve"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/MaterialArtifact"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/core/MaterialArtifact",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  }
+]

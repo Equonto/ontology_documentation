@@ -1,0 +1,981 @@
+[
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+          },
+          {
+            "@id": "http://www.industrialontologies.org/core/DesignativeInformationContentEntity"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid11",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid13",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid15",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid17",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid21",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid23",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.industrialontologies.org/core/isInputOfAtSomeTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid25",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.industrialontologies.org/core/describes"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid27",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid29",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "_:genid33"
+          },
+          {
+            "@id": "_:genid31"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid31",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.industrialontologies.org/core/describes"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid33",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.industrialontologies.org/core/describes"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid35",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid36",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid37",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid38",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid39",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "_:genid8"
+          },
+          {
+            "@id": "_:genid6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid40",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid41",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost"
+          },
+          {
+            "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.industrialontologies.org/core/isInputOfAtSomeTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.industrialontologies.org/core/describes"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.industrialontologies.org/core/DescriptiveInformationContentEntity"
+          },
+          {
+            "@id": "_:genid29"
+          },
+          {
+            "@id": "_:genid27"
+          },
+          {
+            "@id": "_:genid25"
+          },
+          {
+            "@id": "_:genid23"
+          },
+          {
+            "@id": "_:genid21"
+          },
+          {
+            "@id": "_:genid19"
+          },
+          {
+            "@id": "_:genid17"
+          },
+          {
+            "@id": "_:genid15"
+          },
+          {
+            "@id": "_:genid13"
+          },
+          {
+            "@id": "_:genid11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.obolibrary.org/obo/BFO_0000001",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://purl.obolibrary.org/obo/BFO_0000002",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://purl.obolibrary.org/obo/BFO_0000015",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://purl.obolibrary.org/obo/BFO_0000137",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.obolibrary.org/obo/BFO_0000174",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/license",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/license": [
+      {
+        "@value": "Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,\n            Melinda Hodkiewicz\n\n            Permission is hereby granted, free of charge, to any person obtaining a copy of this\n            software and associated documentation files (the \"Software\"), to deal in the\n            Software without restriction, including without limitation the rights to use, copy,\n            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and\n            to permit persons to whom the Software is furnished to do so, subject to the following\n            conditions:\n            The above copyright notice and this permission notice shall be included in all copies or\n            substantial portions of the Software.\n\n            THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF\n            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\n            THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology"
+      },
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Maintenance Work Order record"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/DescriptiveInformationContentEntity"
+      },
+      {
+        "@id": "_:genid9"
+      },
+      {
+        "@id": "_:genid35"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:genid4"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Intermediate class for the different data items (or fields) of\n            the Maintenance Work Order record. If using the IAO, would be some subclass of\n            'IAO:data item'."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Maintenance Work Order record data item"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/DescriptiveInformationContentEntity"
+      },
+      {
+        "@id": "_:genid36"
+      },
+      {
+        "@id": "_:genid37"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderCorrectiveMaintenance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "non-rigid"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Corrective Maintenance Type"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Work Order Description"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A process that is initiated by a work order document. Work order executions\n            will always contain an activity (maintenance or supporting) and will have a functional\n            part as a participant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Work Order Execution Process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000015"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Not shown in the table in the paper as the datatable in the\n            paper shows only a subset of entries for a single functional location, hence, this field\n            is implicit."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Functional Location Tag"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Labour Cost"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      },
+      {
+        "@id": "_:genid38"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "rigid"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Maintenance Type"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Material Cost"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      },
+      {
+        "@id": "_:genid39"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "non-rigid"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Preventative Maintenance Type"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Work Order Started At (Date)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem"
+      },
+      {
+        "@id": "_:genid40"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Convenience property to describe the 'proper continuant\n            parthood at all times' relationship between a data record and its individual data\n            items."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000002"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has field"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000002"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000174"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property allowing the assignment of concrete values to the\n            Maintenance Work Order Record data items that require them. Allows reasoning about\n            numbers, for instance. Aims to be compatible with IAO or similar, but specific to our\n            information content classes for the moment. We also do not restrict the type of value to\n            any particular literal type; whether or not there is value in specialising the data\n            property is not yet determined."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Convenience property to describe the 'proper continuant\n            parthood at all times' relationship between a data record and its individual data\n            items."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000002"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is field of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000002"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000137"
+      }
+    ]
+  },
+  {
+    "@id": "http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation": [
+      {
+        "@language": "en",
+        "@value": "If an ICE 'refers to' an entity\n            then it uses, evokes, or references the entity or concept in some way that is not\n            necessarily descriptive, designative, nor prescriptive."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.industrialontologies.org/core/InformationContentEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "refers to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000001"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.industrialontologies.org/core/isAbout"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/core/DescriptiveInformationContentEntity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/core/DesignativeInformationContentEntity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/core/InformationContentEntity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/core/describes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/core/isAbout",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://www.industrialontologies.org/core/isInputOfAtSomeTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  }
+]

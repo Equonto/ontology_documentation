@@ -1,0 +1,113 @@
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology> <http://www.w3.org/2002/07/owl#imports> <http://www.industrialontologies.org/core/> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology> <http://purl.org/dc/terms/license> "Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,\n            Melinda Hodkiewicz\n\n            Permission is hereby granted, free of charge, to any person obtaining a copy of this\n            software and associated documentation files (the \"Software\"), to deal in the\n            Software without restriction, including without limitation the rights to use, copy,\n            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and\n            to permit persons to whom the Software is furnished to do so, subject to the following\n            conditions:\n            The above copyright notice and this permission notice shall be included in all copies or\n            substantial portions of the Software.\n\n            THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF\n            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\n            THE USE OR OTHER DEALINGS IN THE SOFTWARE." .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2002/07/owl#disjointWith> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2000/01/rdf-schema#label> "Flowmeter" .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2004/02/skos/core#altLabel> "Flow Meter" .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2004/02/skos/core#prefLabel> "Flowmeter" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> <http://www.w3.org/2000/01/rdf-schema#label> "Seal" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> <http://www.w3.org/2000/01/rdf-schema#label> "Motor" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> <http://www.w3.org/2000/01/rdf-schema#label> "Oil" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/2000/01/rdf-schema#label> "Pressure Switch" .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/2004/02/skos/core#altLabel> "Switch" .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/2004/02/skos/core#prefLabel> "Pressure Switch" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> <http://www.w3.org/2000/01/rdf-schema#label> "Pump, Centrifugal" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/MaterialArtifact> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> <http://www.w3.org/2000/01/rdf-schema#label> "Valve" .
+# 
+# http://www.industrialontologies.org/core/MaterialArtifact
+<http://www.industrialontologies.org/core/MaterialArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid1 <http://www.w3.org/2002/07/owl#members> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

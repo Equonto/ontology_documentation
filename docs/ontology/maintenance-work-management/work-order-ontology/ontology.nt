@@ -1,0 +1,343 @@
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology> <http://www.w3.org/2002/07/owl#imports> <http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology> <http://www.w3.org/2002/07/owl#imports> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology> <http://purl.org/dc/elements/1.1/license> "Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,\n            Melinda Hodkiewicz\n\n            Permission is hereby granted, free of charge, to any person obtaining a copy of this\n            software and associated documentation files (the \"Software\"), to deal in the\n            Software without restriction, including without limitation the rights to use, copy,\n            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and\n            to permit persons to whom the Software is furnished to do so, subject to the following\n            conditions:\n            The above copyright notice and this permission notice shall be included in all copies or\n            substantial portions of the Software.\n\n            THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF\n            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\n            THE USE OR OTHER DEALINGS IN THE SOFTWARE." .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation
+<http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/BFO_0000137
+<http://purl.obolibrary.org/obo/BFO_0000137> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000174
+<http://purl.obolibrary.org/obo/BFO_0000174> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.obolibrary.org/obo/BFO_0000174> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> <http://www.w3.org/2002/07/owl#inverseOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.obolibrary.org/obo/BFO_0000002> .
+<http://purl.obolibrary.org/obo/BFO_0000002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.obolibrary.org/obo/BFO_0000002> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> <http://www.w3.org/2000/01/rdf-schema#comment> "Convenience property to describe the 'proper continuant\n            parthood at all times' relationship between a data record and its individual data\n            items."@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> <http://www.w3.org/2000/01/rdf-schema#label> "has field"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.obolibrary.org/obo/BFO_0000137> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.obolibrary.org/obo/BFO_0000002> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.obolibrary.org/obo/BFO_0000002> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Convenience property to describe the 'proper continuant\n            parthood at all times' relationship between a data record and its individual data\n            items."@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> <http://www.w3.org/2000/01/rdf-schema#label> "is field of"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.industrialontologies.org/core/isAbout> .
+<http://www.industrialontologies.org/core/isAbout> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.industrialontologies.org/core/InformationContentEntity> .
+<http://www.industrialontologies.org/core/InformationContentEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.obolibrary.org/obo/BFO_0000001> .
+<http://purl.obolibrary.org/obo/BFO_0000001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo> <http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation> "If an ICE 'refers to' an entity\n            then it uses, evokes, or references the entity or concept in some way that is not\n            necessarily descriptive, designative, nor prescriptive."@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#refersTo> <http://www.w3.org/2000/01/rdf-schema#label> "refers to"@en .
+# 
+# http://www.industrialontologies.org/core/describes
+<http://www.industrialontologies.org/core/describes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.industrialontologies.org/core/isAbout
+# 
+# http://www.industrialontologies.org/core/isInputOfAtSomeTime
+<http://www.industrialontologies.org/core/isInputOfAtSomeTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.industrialontologies.org/core/DesignativeInformationContentEntity> .
+<http://www.industrialontologies.org/core/DesignativeInformationContentEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "A property allowing the assignment of concrete values to the\n            Maintenance Work Order Record data items that require them. Allows reasoning about\n            numbers, for instance. Aims to be compatible with IAO or similar, but specific to our\n            information content classes for the moment. We also do not restrict the type of value to\n            any particular literal type; whether or not there is value in specialising the data\n            property is not yet determined."@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> <http://www.w3.org/2000/01/rdf-schema#label> "has value"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/BFO_0000001
+# 
+# http://purl.obolibrary.org/obo/BFO_0000002
+# 
+# http://purl.obolibrary.org/obo/BFO_0000015
+<http://purl.obolibrary.org/obo/BFO_0000015> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity
+<http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity
+<http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/isInputOfAtSomeTime> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/describes> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/DescriptiveInformationContentEntity> .
+<http://www.industrialontologies.org/core/DescriptiveInformationContentEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid9 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate> .
+_:genid11 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#onClass> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost> .
+_:genid13 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#onClass> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> .
+_:genid15 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#onClass> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost> .
+_:genid17 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag> .
+_:genid19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText> .
+_:genid21 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/isInputOfAtSomeTime> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/describes> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#unionOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/describes> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/describes> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.industrialontologies.org/core/DescriptiveInformationContentEntity> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasDataField> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> <http://www.w3.org/2002/07/owl#disjointWith> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Maintenance Work Order record"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/DescriptiveInformationContentEntity> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#onClass> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecord> .
+_:genid36 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#isDataFieldOf> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> <http://www.w3.org/2000/01/rdf-schema#comment> "Intermediate class for the different data items (or fields) of\n            the Maintenance Work Order record. If using the IAO, would be some subclass of\n            'IAO:data item'."@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> <http://www.w3.org/2000/01/rdf-schema#label> "Maintenance Work Order record data item"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderCorrectiveMaintenance
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderCorrectiveMaintenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderCorrectiveMaintenance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderCorrectiveMaintenance> <http://www.w3.org/2002/07/owl#disjointWith> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderCorrectiveMaintenance> <http://www.w3.org/2000/01/rdf-schema#comment> "non-rigid"@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderCorrectiveMaintenance> <http://www.w3.org/2000/01/rdf-schema#label> "Corrective Maintenance Type"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText> <http://www.w3.org/2000/01/rdf-schema#label> "Work Order Description"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/BFO_0000015> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A process that is initiated by a work order document. Work order executions\n            will always contain an activity (maintenance or supporting) and will have a functional\n            part as a participant." .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderExecutionProcess> <http://www.w3.org/2000/01/rdf-schema#label> "Work Order Execution Process" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag> <http://www.w3.org/2000/01/rdf-schema#comment> "Not shown in the table in the paper as the datatable in the\n            paper shows only a subset of entries for a single functional location, hence, this field\n            is implicit."@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag> <http://www.w3.org/2000/01/rdf-schema#label> "Functional Location Tag"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost> <http://www.w3.org/2000/01/rdf-schema#label> "Labour Cost"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> <http://www.w3.org/2000/01/rdf-schema#comment> "rigid"@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> <http://www.w3.org/2000/01/rdf-schema#label> "Maintenance Type"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+_:genid39 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost> <http://www.w3.org/2000/01/rdf-schema#label> "Material Cost"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance> <http://www.w3.org/2000/01/rdf-schema#comment> "non-rigid"@en .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderPreventativeMaintenance> <http://www.w3.org/2000/01/rdf-schema#label> "Preventative Maintenance Type"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#MaintenanceWorkOrderRecordDataItem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#hasValue> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate> <http://www.w3.org/2000/01/rdf-schema#label> "Work Order Started At (Date)"@en .
+# 
+# http://www.industrialontologies.org/core/DescriptiveInformationContentEntity
+# 
+# http://www.industrialontologies.org/core/DesignativeInformationContentEntity
+# 
+# http://www.industrialontologies.org/core/InformationContentEntity
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid41 <http://www.w3.org/2002/07/owl#members> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderStartedDate> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaterialCost> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderMaintenanceType> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderLabourCost> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderFunctionalLocationTag> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/work-order-ontology#WorkOrderDescriptionText> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

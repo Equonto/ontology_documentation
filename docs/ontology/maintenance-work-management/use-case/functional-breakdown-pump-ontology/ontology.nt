@@ -1,0 +1,318 @@
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology> <http://www.w3.org/2002/07/owl#imports> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology> <http://purl.org/dc/elements/1.1/license> "Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,\n            Melinda Hodkiewicz\n\n            Permission is hereby granted, free of charge, to any person obtaining a copy of this\n            software and associated documentation files (the \"Software\"), to deal in the\n            Software without restriction, including without limitation the rights to use, copy,\n            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and\n            to permit persons to whom the Software is furnished to do so, subject to the following\n            conditions:\n            The above copyright notice and this permission notice shall be included in all copies or\n            substantial portions of the Software.\n\n            THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF\n            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\n            THE USE OR OTHER DEALINGS IN THE SOFTWARE." .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/BFO_0000137
+<http://purl.obolibrary.org/obo/BFO_0000137> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000176
+<http://purl.obolibrary.org/obo/BFO_0000176> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000178
+<http://purl.obolibrary.org/obo/BFO_0000178> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000196
+<http://purl.obolibrary.org/obo/BFO_0000196> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.industrialontologies.org/core/RO_0000087
+<http://www.industrialontologies.org/core/RO_0000087> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/BFO_0000029
+<http://purl.obolibrary.org/obo/BFO_0000029> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000140
+<http://purl.obolibrary.org/obo/BFO_0000140> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000176> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000176> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000176> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000176> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000176> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000176> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/Component> .
+<http://www.industrialontologies.org/core/Component> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/EngineeredSystem> .
+<http://www.industrialontologies.org/core/EngineeredSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000137> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000140> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000029> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000178> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Control and Monitoring System"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/Component> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/EngineeredSystem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000137> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#unionOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000140> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000029> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000178> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Driver and Electrical System"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000196> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/Component> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent> <http://www.w3.org/2000/01/rdf-schema#label> "Functional Component" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/ComponentRole> .
+<http://www.industrialontologies.org/core/ComponentRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The role that a material artifact bears if it is a functional part of the\n            larger system. For example, a pump cannot operate without a motor. Therefore, the motor\n            will play a critical component role in the pump system." .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> <http://www.w3.org/2000/01/rdf-schema#label> "Functional Component Role" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/Component> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/EngineeredSystem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000137> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#unionOf> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000140> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000029> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000178> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Lubrication System"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/EngineeredSystem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000137> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+_:genid39 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#unionOf> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000140> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000029> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000178> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Piping and Valves System" .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/EngineeredSystem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid44 .
+_:genid44 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000137> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
+_:genid45 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Power Transmission System"@en .
+# 
+# http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.industrialontologies.org/core/EngineeredSystem> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid46 .
+_:genid46 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000137> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+_:genid47 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole> .
+_:genid47 <http://www.w3.org/2002/07/owl#onProperty> <http://www.industrialontologies.org/core/RO_0000087> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid49 .
+_:genid49 <http://www.w3.org/2002/07/owl#unionOf> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#unionOf> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000140> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/BFO_0000029> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/BFO_0000178> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Pump Unit System"@en .
+# 
+# http://www.industrialontologies.org/core/Component
+# 
+# http://www.industrialontologies.org/core/ComponentRole
+# 
+# http://www.industrialontologies.org/core/EngineeredSystem
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

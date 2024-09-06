@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="resources/primer.css" media="screen" />
+    <link rel="stylesheet" href="resources/rec.css" media="screen" />
+    <link rel="stylesheet" href="resources/extra.css" media="screen" />
+    <link rel="stylesheet" href="resources/owl.css" media="screen" />
+    <title>
+      Use Case (Maintenance Activity): Functional Breakdown Pump Ontology
+    </title>
+
+    <!-- SCHEMA.ORG METADATA -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "url": "",
+        "image": "http://vowl.visualdataweb.org/webvowl/#iri=",
+        "name": "Use Case (Maintenance Activity): Functional Breakdown Pump Ontology",
+        "headline": "Document describing the ontology ",
+        "dateReleased": "Fri Jan 12 10:19:50 AWST 2024",
+        "license": "https://opensource.org/license/mit/",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner and Melinda Hodkiewicz"
+          }
+        ]
+      }
+    </script>
+
+    <script src="resources/jquery.js"></script>
+    <script src="resources/marked.min.js"></script>
+    <script>
+      function loadHash() {
+        jQuery(".markdown").each(function (el) {
+          jQuery(this)
+            .after(marked(jQuery(this).text()))
+            .remove();
+        });
+        var hash = location.hash;
+        if ($(hash).offset() != null) {
+          $("html, body").animate({ scrollTop: $(hash).offset().top }, 0);
+        }
+        loadTOC();
+      }
+      function loadTOC() {
+        //process toc dynamically
+        var t = "<h2>Table of contents</h2><ul>";
+        i = 1;
+        j = 0;
+        jQuery(".list").each(function () {
+          if (jQuery(this).is("h2")) {
+            if (j > 0) {
+              t += "</ul>";
+              j = 0;
+            }
+            t +=
+              "<li>" +
+              i +
+              ". <a href=#" +
+              jQuery(this).attr("id") +
+              ">" +
+              jQuery(this).ignore("span").text() +
+              "</a></li>";
+            i++;
+          }
+          if (jQuery(this).is("h3")) {
+            if (j == 0) {
+              t += "<ul>";
+            }
+            j++;
+            t +=
+              "<li>" +
+              (i - 1) +
+              "." +
+              j +
+              ". " +
+              "<a href=#" +
+              jQuery(this).attr("id") +
+              ">" +
+              jQuery(this).ignore("span").text() +
+              "</a></li>";
+          }
+        });
+        t += "</ul>";
+        $("#toc").html(t);
+      }
+      $(function () {
+        loadHash();
+      });
+      $.fn.ignore = function (sel) {
+        return this.clone()
+          .find(sel || ">*")
+          .remove()
+          .end();
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="head">
+        <div style="float: right">
+          language <a href="index-en.html"><b>en</b></a>
+        </div>
+        <h1>
+          Use Case (Maintenance Activity): Functional Breakdown Pump Ontology
+        </h1>
+
+        <dl>
+          <dt>This version:</dt>
+          <dd>
+            <a
+              href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology/"
+              >http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology/</a
+            >
+          </dd>
+          <dt>Issued on:</dt>
+          <dd>2024-01-12</dd>
+          <dt>Authors:</dt>
+          <dd>
+            Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner and
+            Melinda Hodkiewicz, The University of Western Australia & The
+            University of South Australia
+          </dd>
+
+          <dt>Download serialization:</dt>
+          <dd>
+            <span
+              ><a href="ontology.jsonld" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-JSON_LD-blue.svg"
+                  alt="JSON-LD"
+              /></a> </span
+            ><span
+              ><a href="ontology.owl" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-RDF/XML-blue.svg"
+                  alt="RDF/XML"
+              /></a> </span
+            ><span
+              ><a href="ontology.nt" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-N_Triples-blue.svg"
+                  alt="N-Triples"
+              /></a> </span
+            ><span
+              ><a href="ontology.ttl" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-TTL-blue.svg"
+                  alt="TTL"
+              /></a>
+            </span>
+          </dd>
+          <dt>License:</dt>
+          <dd>
+            <a href="https://opensource.org/license/mit/" target="_blank"
+              ><img
+                src="https://img.shields.io/badge/License-MIT-blue.svg"
+                alt="https://opensource.org/license/mit/"
+            /></a>
+            <a
+              href="https://opensource.org/license/mit/"
+              rel="license"
+              target="_blank"
+            >
+              <img src="null" style="border-width: 0" alt="License" />
+            </a>
+            <br />
+          </dd>
+          <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
+          <dt>Cite as:</dt>
+          <dd>
+            Woods, C., Selway, M., Bikaun, T., Stumptner, M., & Hodkiewicz, M.
+            An ontology for maintenance activities and its application to data
+            quality. Semantic Web, (Preprint), 1-34.
+          </dd>
+        </dl>
+
+        <a href="provenance/provenance-en.html" target="_blank"
+          >Provenance of this page</a
+        >
+        <hr />
+      </div>
+      <div class="status">
+        <div>
+          <span>Ontology Specification</span>
+        </div>
+      </div>
+      <div id="toc"></div>
+
+      <!--OVERVIEW SECTION-->
+      <div id="overview">
+        <h2 id="overv" class="list">
+          Functional Breakdown Pump Ontology: Overview
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        <span class="markdown">
+          This ontology has the following classes and properties.</span
+        >
+        <h4>Classes</h4>
+        <ul
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          class="hlist"
+        >
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+              >Control and Monitoring System</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+              >Driver and Electrical System</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+            >
+              <span>flowmeter</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent"
+              >Functional Component</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole"
+              >Functional Component Role</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+              >Lubrication System</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+            >
+              <span>mechanical seal</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+            >
+              <span>motor</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+            >
+              <span>oil</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+              >Piping and Valves System</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem"
+              >Power Transmission System</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+            >
+              <span>pressure switch</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+            >
+              <span>pump</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+              >Pump Unit System</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+            >
+              <span>valve</span>
+            </a>
+          </li>
+        </ul>
+        <h4>Annotation Properties</h4>
+        <ul
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          class="hlist"
+        >
+          <li>
+            <a
+              href="#http://purl.org/dc/elements/1.1/license"
+              title="http://purl.org/dc/elements/1.1/license"
+            >
+              <span>license</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--CROSSREF SECTION-->
+      <div id="crossref">
+        <h2 id="crossreference" class="list">
+          Cross-reference for Functional Breakdown Pump Ontology classes, object
+          properties and data properties
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        This section provides details for each class and property defined by
+        Functional Breakdown Pump Ontology.
+        <div
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          id="classes"
+        >
+          <h3 id="classes-headline" class="list">Classes</h3>
+          <ul class="hlist">
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+                >Control and Monitoring System</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+                >Driver and Electrical System</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+              >
+                <span>flowmeter</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent"
+                >Functional Component</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole"
+                >Functional Component Role</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+                >Lubrication System</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+              >
+                <span>mechanical seal</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+              >
+                <span>motor</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+              >
+                <span>oil</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+                >Piping and Valves System</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem"
+                >Power Transmission System</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+              >
+                <span>pressure switch</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+              >
+                <span>pump</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+                >Pump Unit System</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+              >
+                <span>valve</span>
+              </a>
+            </li>
+          </ul>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+          >
+            <h3>
+              Control and Monitoring System<sup class="type-c" title="class"
+                >c</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/Component"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/Component"
+                  >component</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="http://www.industrialontologies.org/core/EngineeredSystem"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/EngineeredSystem"
+                  >engineered system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+          >
+            <h3>
+              Driver and Electrical System<sup class="type-c" title="class"
+                >c</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/Component"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/Component"
+                  >component</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="http://www.industrialontologies.org/core/EngineeredSystem"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/EngineeredSystem"
+                  >engineered system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+          >
+            <h3>
+              flowmeter<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd />
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent"
+          >
+            <h3>
+              Functional Component<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent
+            </p>
+            <dl class="description">
+              <dt>is equivalent to</dt>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000196"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000196"
+                  >b f o 0000196</a
+                >
+                <sup class="type-op" title="object property">op</sup>
+                <span class="logic">some</span>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole"
+                  >Functional Component Role</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/Component"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/Component"
+                  >component</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole"
+          >
+            <h3>
+              Functional Component Role<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole
+            </p>
+            <div class="comment">
+              <span class="markdown"
+                >The role that a material artifact bears if it is a functional
+                part of the larger system. For example, a pump cannot operate
+                without a motor. Therefore, the motor will play a critical
+                component role in the pump system.</span
+              >
+            </div>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/ComponentRole"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/ComponentRole"
+                  >component role</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+          >
+            <h3>
+              Lubrication System<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/Component"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/Component"
+                  >component</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="http://www.industrialontologies.org/core/EngineeredSystem"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/EngineeredSystem"
+                  >engineered system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+          >
+            <h3>
+              mechanical seal<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd />
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+          >
+            <h3>
+              motor<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd />
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+          >
+            <h3>
+              oil<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd />
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+          >
+            <h3>
+              Piping and Valves System<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/EngineeredSystem"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/EngineeredSystem"
+                  >engineered system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem"
+          >
+            <h3>
+              Power Transmission System<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/EngineeredSystem"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/EngineeredSystem"
+                  >engineered system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+          >
+            <h3>
+              pressure switch<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd />
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+          >
+            <h3>
+              pump<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd />
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+          >
+            <h3>
+              Pump Unit System<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://www.industrialontologies.org/core/EngineeredSystem"
+                  target="_blank"
+                  title="http://www.industrialontologies.org/core/EngineeredSystem"
+                  >engineered system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+          >
+            <h3>
+              valve<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd />
+            </dl>
+          </div>
+        </div>
+        <div
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          id="annotationproperties"
+        >
+          <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+          <ul class="hlist">
+            <li>
+              <a
+                href="#http://purl.org/dc/elements/1.1/license"
+                title="http://purl.org/dc/elements/1.1/license"
+              >
+                <span>license</span>
+              </a>
+            </li>
+          </ul>
+          <div class="entity" id="http://purl.org/dc/elements/1.1/license">
+            <h3>
+              license<sup class="type-ap" title="annotation property">ap</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/license</p>
+          </div>
+        </div>
+        <div id="legend">
+          <h2>
+            Legend <span class="backlink"> back to <a href="#toc">ToC</a></span>
+          </h2>
+          <div class="entity">
+            <sup class="type-c" title="Classes">c</sup>: Classes <br />
+          </div>
+        </div>
+      </div>
+      <div id="acknowledgments">
+        <h2 id="ack" class="list">
+          Acknowledgments
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        <p>
+          The authors would like to thank
+          <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing
+          <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL
+          Documentation Environment, which is used for representing the Cross
+          Referencing Section of this document and
+          <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for
+          developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the
+          program used to create the template used in this documentation.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

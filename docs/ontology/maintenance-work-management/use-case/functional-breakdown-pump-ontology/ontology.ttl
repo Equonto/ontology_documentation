@@ -1,0 +1,318 @@
+@prefix : <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#> .
+
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology> rdf:type owl:Ontology ;
+                                                                                                            owl:imports <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology> ;
+                                                                                                            <http://purl.org/dc/elements/1.1/license> """Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,
+            Melinda Hodkiewicz
+
+            Permission is hereby granted, free of charge, to any person obtaining a copy of this
+            software and associated documentation files (the \"Software\"), to deal in the
+            Software without restriction, including without limitation the rights to use, copy,
+            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+            to permit persons to whom the Software is furnished to do so, subject to the following
+            conditions:
+            The above copyright notice and this permission notice shall be included in all copies or
+            substantial portions of the Software.
+
+            THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+            THE USE OR OTHER DEALINGS IN THE SOFTWARE.""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000137
+<http://purl.obolibrary.org/obo/BFO_0000137> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000176
+<http://purl.obolibrary.org/obo/BFO_0000176> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000178
+<http://purl.obolibrary.org/obo/BFO_0000178> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000196
+<http://purl.obolibrary.org/obo/BFO_0000196> rdf:type owl:ObjectProperty .
+
+
+###  http://www.industrialontologies.org/core/RO_0000087
+<http://www.industrialontologies.org/core/RO_0000087> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000029
+<http://purl.obolibrary.org/obo/BFO_0000029> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000140
+<http://purl.obolibrary.org/obo/BFO_0000140> rdf:type owl:Class .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter> rdf:type owl:Class ;
+                                                                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                                                                                                                        owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                                                                                                      ] ,
+                                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                                                                                                        owl:someValuesFrom :FunctionalComponentRole
+                                                                                                                      ] .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal> rdf:type owl:Class ;
+                                                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                                                                                                                             owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                                                                                                           ] .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                                                                                                                    owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                                                                                                  ] ,
+                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                    owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                                                                                                    owl:someValuesFrom :FunctionalComponentRole
+                                                                                                                  ] .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                                                                                                                  owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                                                                                                ] .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch> rdf:type owl:Class ;
+                                                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                                                                                                                             owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                                                                                                           ] ,
+                                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                                             owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                                                                                                             owl:someValuesFrom :FunctionalComponentRole
+                                                                                                                           ] .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                                                                                                   owl:someValuesFrom :FunctionalComponentRole
+                                                                                                                 ] .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor> rdf:type owl:Class .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve
+<http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                                                                                                                    owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                                                                                                  ] .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem
+:ControlAndMonitoringSystem rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.industrialontologies.org/core/Component> ,
+                                            <http://www.industrialontologies.org/core/EngineeredSystem> ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000137> ;
+                                              owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                              owl:someValuesFrom :FunctionalComponentRole
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000029>
+                                                                                <http://purl.obolibrary.org/obo/BFO_0000140>
+                                                                                [ rdf:type owl:Class ;
+                                                                                  owl:unionOf ( <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter>
+                                                                                                <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch>
+                                                                                                <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor>
+                                                                                              )
+                                                                                ]
+                                                                              )
+                                                                ]
+                                            ] ;
+                            rdfs:label "Control and Monitoring System"@en .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem
+:DriverAndElectricalSystem rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.industrialontologies.org/core/Component> ,
+                                           <http://www.industrialontologies.org/core/EngineeredSystem> ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000137> ;
+                                             owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                             owl:someValuesFrom :FunctionalComponentRole
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                 owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000029>
+                                                                               <http://purl.obolibrary.org/obo/BFO_0000140>
+                                                                               <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor>
+                                                                             )
+                                                               ]
+                                           ] ;
+                           rdfs:label "Driver and Electrical System"@en .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponent
+:FunctionalComponent rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
+                                           owl:someValuesFrom :FunctionalComponentRole
+                                         ] ;
+                     rdfs:subClassOf <http://www.industrialontologies.org/core/Component> ;
+                     rdfs:label "Functional Component" .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#FunctionalComponentRole
+:FunctionalComponentRole rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.industrialontologies.org/core/ComponentRole> ;
+                         rdfs:comment """The role that a material artifact bears if it is a functional part of the
+            larger system. For example, a pump cannot operate without a motor. Therefore, the motor
+            will play a critical component role in the pump system.""" ;
+                         rdfs:label "Functional Component Role" .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem
+:LubricationSystem rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.industrialontologies.org/core/Component> ,
+                                   <http://www.industrialontologies.org/core/EngineeredSystem> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000137> ;
+                                     owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                     owl:someValuesFrom :FunctionalComponentRole
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                     owl:allValuesFrom [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000029>
+                                                                       <http://purl.obolibrary.org/obo/BFO_0000140>
+                                                                       <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil>
+                                                                     )
+                                                       ]
+                                   ] ;
+                   rdfs:label "Lubrication System"@en .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem
+:PipingAndValvesSystem rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.industrialontologies.org/core/EngineeredSystem> ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000137> ;
+                                         owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                         owl:someValuesFrom :FunctionalComponentRole
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                         owl:allValuesFrom [ rdf:type owl:Class ;
+                                                             owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000029>
+                                                                           <http://purl.obolibrary.org/obo/BFO_0000140>
+                                                                           <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve>
+                                                                         )
+                                                           ]
+                                       ] ;
+                       rdfs:label "Piping and Valves System" .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PowerTransmissionSystem
+:PowerTransmissionSystem rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.industrialontologies.org/core/EngineeredSystem> ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000137> ;
+                                           owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                           owl:someValuesFrom :FunctionalComponentRole
+                                         ] ;
+                         rdfs:label "Power Transmission System"@en .
+
+
+###  http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem
+:PumpUnitSystem rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.industrialontologies.org/core/EngineeredSystem> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000137> ;
+                                  owl:someValuesFrom <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://www.industrialontologies.org/core/RO_0000087> ;
+                                  owl:someValuesFrom :FunctionalComponentRole
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000029>
+                                                                    <http://purl.obolibrary.org/obo/BFO_0000140>
+                                                                    [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal>
+                                                                                    <http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump>
+                                                                                  )
+                                                                    ]
+                                                                  )
+                                                    ]
+                                ] ;
+                rdfs:label "Pump Unit System"@en .
+
+
+###  http://www.industrialontologies.org/core/Component
+<http://www.industrialontologies.org/core/Component> rdf:type owl:Class .
+
+
+###  http://www.industrialontologies.org/core/ComponentRole
+<http://www.industrialontologies.org/core/ComponentRole> rdf:type owl:Class .
+
+
+###  http://www.industrialontologies.org/core/EngineeredSystem
+<http://www.industrialontologies.org/core/EngineeredSystem> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

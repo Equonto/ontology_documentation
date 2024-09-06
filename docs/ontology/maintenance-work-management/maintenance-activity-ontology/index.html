@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="resources/primer.css" media="screen" />
+    <link rel="stylesheet" href="resources/rec.css" media="screen" />
+    <link rel="stylesheet" href="resources/extra.css" media="screen" />
+    <link rel="stylesheet" href="resources/owl.css" media="screen" />
+    <title>Maintenance Activity Ontology</title>
+
+    <!-- SCHEMA.ORG METADATA -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "url": "",
+        "image": "http://vowl.visualdataweb.org/webvowl/#iri=",
+        "name": "Maintenance Activity Ontology",
+        "headline": "Document describing the ontology ",
+        "dateReleased": "Fri Jan 12 10:19:04 AWST 2024",
+        "license": "https://opensource.org/license/mit/",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner and Melinda Hodkiewicz"
+          }
+        ]
+      }
+    </script>
+
+    <script src="resources/jquery.js"></script>
+    <script src="resources/marked.min.js"></script>
+    <script>
+      function loadHash() {
+        jQuery(".markdown").each(function (el) {
+          jQuery(this)
+            .after(marked(jQuery(this).text()))
+            .remove();
+        });
+        var hash = location.hash;
+        if ($(hash).offset() != null) {
+          $("html, body").animate({ scrollTop: $(hash).offset().top }, 0);
+        }
+        loadTOC();
+      }
+      function loadTOC() {
+        //process toc dynamically
+        var t = "<h2>Table of contents</h2><ul>";
+        i = 1;
+        j = 0;
+        jQuery(".list").each(function () {
+          if (jQuery(this).is("h2")) {
+            if (j > 0) {
+              t += "</ul>";
+              j = 0;
+            }
+            t +=
+              "<li>" +
+              i +
+              ". <a href=#" +
+              jQuery(this).attr("id") +
+              ">" +
+              jQuery(this).ignore("span").text() +
+              "</a></li>";
+            i++;
+          }
+          if (jQuery(this).is("h3")) {
+            if (j == 0) {
+              t += "<ul>";
+            }
+            j++;
+            t +=
+              "<li>" +
+              (i - 1) +
+              "." +
+              j +
+              ". " +
+              "<a href=#" +
+              jQuery(this).attr("id") +
+              ">" +
+              jQuery(this).ignore("span").text() +
+              "</a></li>";
+          }
+        });
+        t += "</ul>";
+        $("#toc").html(t);
+      }
+      $(function () {
+        loadHash();
+      });
+      $.fn.ignore = function (sel) {
+        return this.clone()
+          .find(sel || ">*")
+          .remove()
+          .end();
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="head">
+        <div style="float: right">
+          language <a href="index-en.html"><b>en</b></a>
+        </div>
+        <h1>Maintenance Activity Ontology</h1>
+
+        <dl>
+          <dt>This version:</dt>
+          <dd>
+            <a
+              href="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology/"
+              >http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology/</a
+            >
+          </dd>
+          <dt>Issued on:</dt>
+          <dd>2024-01-12</dd>
+          <dt>Authors:</dt>
+          <dd>
+            Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner and
+            Melinda Hodkiewicz, The University of Western Australia & The
+            University of South Australia
+          </dd>
+
+          <dt>Download serialization:</dt>
+          <dd>
+            <span
+              ><a href="ontology.jsonld" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-JSON_LD-blue.svg"
+                  alt="JSON-LD"
+              /></a> </span
+            ><span
+              ><a href="ontology.owl" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-RDF/XML-blue.svg"
+                  alt="RDF/XML"
+              /></a> </span
+            ><span
+              ><a href="ontology.nt" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-N_Triples-blue.svg"
+                  alt="N-Triples"
+              /></a> </span
+            ><span
+              ><a href="ontology.ttl" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-TTL-blue.svg"
+                  alt="TTL"
+              /></a>
+            </span>
+          </dd>
+          <dt>License:</dt>
+          <dd>
+            <a href="https://opensource.org/license/mit/" target="_blank"
+              ><img
+                src="https://img.shields.io/badge/License-MIT-blue.svg"
+                alt="https://opensource.org/license/mit/"
+            /></a>
+            <a
+              href="https://opensource.org/license/mit/"
+              rel="license"
+              target="_blank"
+            >
+              <img src="null" style="border-width: 0" alt="License" />
+            </a>
+            <br />
+          </dd>
+          <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
+          <dt>Cite as:</dt>
+          <dd>
+            Woods, C., Selway, M., Bikaun, T., Stumptner, M., & Hodkiewicz, M.
+            An ontology for maintenance activities and its application to data
+            quality. Semantic Web, (Preprint), 1-34.
+          </dd>
+        </dl>
+
+        <a href="provenance/provenance-en.html" target="_blank"
+          >Provenance of this page</a
+        >
+        <hr />
+      </div>
+      <div class="status">
+        <div>
+          <span>Ontology Specification</span>
+        </div>
+      </div>
+      <div id="toc"></div>
+
+      <!--OVERVIEW SECTION-->
+      <div id="overview">
+        <h2 id="overv" class="list">
+          Maintenance Activity Ontology: Overview
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        <span class="markdown">
+          This ontology has the following classes and properties.</span
+        >
+        <h4>Classes</h4>
+        <ul
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          class="hlist"
+        >
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+              >adjust</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin"
+              >admin</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble"
+              >assemble</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+              >calibrate</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+              >diagnose</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+              >inspect</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate"
+              >isolate</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+              >Maintenance Activity</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify"
+              >modify</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move"
+              >move</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate"
+              >operate</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform"
+              >perform</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+              >repair</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+              >replace</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+              >service</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+              >Supporting Activity</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork"
+              >teamwork</a
+            >
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#UnspecifiedActivity"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#UnspecifiedActivity"
+              >Unspecified Activity</a
+            >
+          </li>
+        </ul>
+        <h4>Annotation Properties</h4>
+        <ul
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          class="hlist"
+        >
+          <li>
+            <a
+              href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation"
+              title="http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation"
+            >
+              <span>elucidation</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://purl.org/dc/elements/1.1/license"
+              title="http://purl.org/dc/elements/1.1/license"
+            >
+              <span>license</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/naturalLanguageDefinition"
+              title="http://www.industrialontologies.org/IOFAnnotationVocabulary/naturalLanguageDefinition"
+            >
+              <span>natural language definition</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://purl.org/dc/terms/rights"
+              title="http://purl.org/dc/terms/rights"
+            >
+              <span>rights</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/semi-formalNaturalLanguageDefinition"
+              title="http://www.industrialontologies.org/IOFAnnotationVocabulary/semi-formalNaturalLanguageDefinition"
+            >
+              <span>semi formal natural language definition</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/synonym"
+              title="http://www.industrialontologies.org/IOFAnnotationVocabulary/synonym"
+            >
+              <span>synonym</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--CROSSREF SECTION-->
+      <div id="crossref">
+        <h2 id="crossreference" class="list">
+          Cross-reference for Maintenance Activity Ontology classes, object
+          properties and data properties
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        This section provides details for each class and property defined by
+        Maintenance Activity Ontology.
+        <div
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          id="classes"
+        >
+          <h3 id="classes-headline" class="list">Classes</h3>
+          <ul class="hlist">
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                >adjust</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin"
+                >admin</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble"
+                >assemble</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                >calibrate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                >diagnose</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                >inspect</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate"
+                >isolate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                >Maintenance Activity</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify"
+                >modify</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move"
+                >move</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate"
+                >operate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform"
+                >perform</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                >repair</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                >replace</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                >service</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                >Supporting Activity</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork"
+                >teamwork</a
+              >
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#UnspecifiedActivity"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#UnspecifiedActivity"
+                >Unspecified Activity</a
+              >
+            </li>
+          </ul>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+          >
+            <h3>
+              adjust<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  >Maintenance Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>is disjoint with</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  >calibrate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  >diagnose</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  >inspect</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  >repair</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  >replace</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  >service</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin"
+          >
+            <h3>
+              admin<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble"
+          >
+            <h3>
+              assemble<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble
+            </p>
+            <div class="comment">
+              <span class="markdown">insert</span>
+            </div>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+          >
+            <h3>
+              calibrate<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  >Maintenance Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>is disjoint with</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  >adjust</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  >diagnose</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  >inspect</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  >repair</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  >replace</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  >service</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+          >
+            <h3>
+              diagnose<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  >Maintenance Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>is disjoint with</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  >adjust</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  >calibrate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  >inspect</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  >repair</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  >replace</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  >service</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+          >
+            <h3>
+              inspect<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  >Maintenance Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>is disjoint with</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  >adjust</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  >calibrate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  >diagnose</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  >repair</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  >replace</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  >service</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate"
+          >
+            <h3>
+              isolate<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+          >
+            <h3>
+              Maintenance Activity<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000015"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000015"
+                  >b f o 0000015</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>has sub-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  >adjust</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  >calibrate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  >diagnose</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  >inspect</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  >repair</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  >replace</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  >service</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify"
+          >
+            <h3>
+              modify<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move"
+          >
+            <h3>
+              move<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate"
+          >
+            <h3>
+              operate<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform"
+          >
+            <h3>
+              perform<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+          >
+            <h3>
+              repair<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  >Maintenance Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>is disjoint with</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  >adjust</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  >calibrate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  >diagnose</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  >inspect</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  >replace</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  >service</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+          >
+            <h3>
+              replace<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  >Maintenance Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>is disjoint with</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  >adjust</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  >calibrate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  >diagnose</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  >inspect</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  >repair</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+                  >service</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service"
+          >
+            <h3>
+              service<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#service
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#MaintenanceActivity"
+                  >Maintenance Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>is disjoint with</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#adjust"
+                  >adjust</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#calibrate"
+                  >calibrate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#diagnose"
+                  >diagnose</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#inspect"
+                  >inspect</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#repair"
+                  >repair</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#replace"
+                  >replace</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+          >
+            <h3>
+              Supporting Activity<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000015"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000015"
+                  >b f o 0000015</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>has sub-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#admin"
+                  >admin</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#assemble"
+                  >assemble</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#isolate"
+                  >isolate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#modify"
+                  >modify</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#move"
+                  >move</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#operate"
+                  >operate</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#perform"
+                  >perform</a
+                >
+                <sup class="type-c" title="class">c</sup>,
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork"
+                  >teamwork</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork"
+          >
+            <h3>
+              teamwork<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#teamwork
+            </p>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#SupportingActivity"
+                  >Supporting Activity</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#UnspecifiedActivity"
+          >
+            <h3>
+              Unspecified Activity<sup class="type-c" title="class">c</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#classes">Class ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/maintenance-activity-ontology#UnspecifiedActivity
+            </p>
+            <div class="comment">
+              <span class="markdown"
+                >Describes a maintenance or supporting activity where we are not
+                sure of its classification</span
+              >
+            </div>
+            <dl class="description">
+              <dt>has super-classes</dt>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000015"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000015"
+                  >b f o 0000015</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          id="annotationproperties"
+        >
+          <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+          <ul class="hlist">
+            <li>
+              <a
+                href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation"
+                title="http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation"
+              >
+                <span>elucidation</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://purl.org/dc/elements/1.1/license"
+                title="http://purl.org/dc/elements/1.1/license"
+              >
+                <span>license</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/naturalLanguageDefinition"
+                title="http://www.industrialontologies.org/IOFAnnotationVocabulary/naturalLanguageDefinition"
+              >
+                <span>natural language definition</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://purl.org/dc/terms/rights"
+                title="http://purl.org/dc/terms/rights"
+              >
+                <span>rights</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/semi-formalNaturalLanguageDefinition"
+                title="http://www.industrialontologies.org/IOFAnnotationVocabulary/semi-formalNaturalLanguageDefinition"
+              >
+                <span>semi formal natural language definition</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://www.industrialontologies.org/IOFAnnotationVocabulary/synonym"
+                title="http://www.industrialontologies.org/IOFAnnotationVocabulary/synonym"
+              >
+                <span>synonym</span>
+              </a>
+            </li>
+          </ul>
+          <div
+            class="entity"
+            id="http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation"
+          >
+            <h3>
+              elucidation<sup class="type-ap" title="annotation property"
+                >ap</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://www.industrialontologies.org/IOFAnnotationVocabulary/elucidation
+            </p>
+          </div>
+          <div class="entity" id="http://purl.org/dc/elements/1.1/license">
+            <h3>
+              license<sup class="type-ap" title="annotation property">ap</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/license</p>
+          </div>
+          <div
+            class="entity"
+            id="http://www.industrialontologies.org/IOFAnnotationVocabulary/naturalLanguageDefinition"
+          >
+            <h3>
+              natural language definition<sup
+                class="type-ap"
+                title="annotation property"
+                >ap</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://www.industrialontologies.org/IOFAnnotationVocabulary/naturalLanguageDefinition
+            </p>
+          </div>
+          <div class="entity" id="http://purl.org/dc/terms/rights">
+            <h3>
+              rights<sup class="type-ap" title="annotation property">ap</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/rights</p>
+          </div>
+          <div
+            class="entity"
+            id="http://www.industrialontologies.org/IOFAnnotationVocabulary/semi-formalNaturalLanguageDefinition"
+          >
+            <h3>
+              semi formal natural language definition<sup
+                class="type-ap"
+                title="annotation property"
+                >ap</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://www.industrialontologies.org/IOFAnnotationVocabulary/semi-formalNaturalLanguageDefinition
+            </p>
+          </div>
+          <div
+            class="entity"
+            id="http://www.industrialontologies.org/IOFAnnotationVocabulary/synonym"
+          >
+            <h3>
+              synonym<sup class="type-ap" title="annotation property">ap</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://www.industrialontologies.org/IOFAnnotationVocabulary/synonym
+            </p>
+          </div>
+        </div>
+        <div id="legend">
+          <h2>
+            Legend <span class="backlink"> back to <a href="#toc">ToC</a></span>
+          </h2>
+          <div class="entity">
+            <sup class="type-c" title="Classes">c</sup>: Classes <br />
+          </div>
+        </div>
+      </div>
+      <div id="acknowledgments">
+        <h2 id="ack" class="list">
+          Acknowledgments
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        <p>
+          The authors would like to thank
+          <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing
+          <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL
+          Documentation Environment, which is used for representing the Cross
+          Referencing Section of this document and
+          <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for
+          developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the
+          program used to create the template used in this documentation.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="resources/primer.css" media="screen" />
+    <link rel="stylesheet" href="resources/rec.css" media="screen" />
+    <link rel="stylesheet" href="resources/extra.css" media="screen" />
+    <link rel="stylesheet" href="resources/owl.css" media="screen" />
+    <title>Use Case (Maintenance Activity): Asset Data</title>
+
+    <!-- SCHEMA.ORG METADATA -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "url": "",
+        "image": "http://vowl.visualdataweb.org/webvowl/#iri=",
+        "name": "Use Case (Maintenance Activity): Asset Data",
+        "headline": "Document describing the ontology ",
+        "dateReleased": "Fri Jan 12 10:20:04 AWST 2024",
+        "license": "https://opensource.org/license/mit/",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner and Melinda Hodkiewicz"
+          }
+        ]
+      }
+    </script>
+
+    <script src="resources/jquery.js"></script>
+    <script src="resources/marked.min.js"></script>
+    <script>
+      function loadHash() {
+        jQuery(".markdown").each(function (el) {
+          jQuery(this)
+            .after(marked(jQuery(this).text()))
+            .remove();
+        });
+        var hash = location.hash;
+        if ($(hash).offset() != null) {
+          $("html, body").animate({ scrollTop: $(hash).offset().top }, 0);
+        }
+        loadTOC();
+      }
+      function loadTOC() {
+        //process toc dynamically
+        var t = "<h2>Table of contents</h2><ul>";
+        i = 1;
+        j = 0;
+        jQuery(".list").each(function () {
+          if (jQuery(this).is("h2")) {
+            if (j > 0) {
+              t += "</ul>";
+              j = 0;
+            }
+            t +=
+              "<li>" +
+              i +
+              ". <a href=#" +
+              jQuery(this).attr("id") +
+              ">" +
+              jQuery(this).ignore("span").text() +
+              "</a></li>";
+            i++;
+          }
+          if (jQuery(this).is("h3")) {
+            if (j == 0) {
+              t += "<ul>";
+            }
+            j++;
+            t +=
+              "<li>" +
+              (i - 1) +
+              "." +
+              j +
+              ". " +
+              "<a href=#" +
+              jQuery(this).attr("id") +
+              ">" +
+              jQuery(this).ignore("span").text() +
+              "</a></li>";
+          }
+        });
+        t += "</ul>";
+        $("#toc").html(t);
+      }
+      $(function () {
+        loadHash();
+      });
+      $.fn.ignore = function (sel) {
+        return this.clone()
+          .find(sel || ">*")
+          .remove()
+          .end();
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="head">
+        <div style="float: right">
+          language <a href="index-en.html"><b>en</b></a>
+        </div>
+        <h1>Use Case (Maintenance Activity): Asset Data</h1>
+
+        <dl>
+          <dt>This version:</dt>
+          <dd>
+            <a
+              href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data/"
+              >http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data/</a
+            >
+          </dd>
+          <dt>Issued on:</dt>
+          <dd>2024-01-12</dd>
+          <dt>Authors:</dt>
+          <dd>
+            Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner and
+            Melinda Hodkiewicz, The University of Western Australia & The
+            University of South Australia
+          </dd>
+
+          <dt>Download serialization:</dt>
+          <dd>
+            <span
+              ><a href="ontology.jsonld" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-JSON_LD-blue.svg"
+                  alt="JSON-LD"
+              /></a> </span
+            ><span
+              ><a href="ontology.owl" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-RDF/XML-blue.svg"
+                  alt="RDF/XML"
+              /></a> </span
+            ><span
+              ><a href="ontology.nt" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-N_Triples-blue.svg"
+                  alt="N-Triples"
+              /></a> </span
+            ><span
+              ><a href="ontology.ttl" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Format-TTL-blue.svg"
+                  alt="TTL"
+              /></a>
+            </span>
+          </dd>
+          <dt>License:</dt>
+          <dd>
+            <a href="https://opensource.org/license/mit/" target="_blank"
+              ><img
+                src="https://img.shields.io/badge/License-MIT-blue.svg"
+                alt="https://opensource.org/license/mit/"
+            /></a>
+            <a
+              href="https://opensource.org/license/mit/"
+              rel="license"
+              target="_blank"
+            >
+              <img src="null" style="border-width: 0" alt="License" />
+            </a>
+            <br />
+          </dd>
+          <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
+          <dt>Cite as:</dt>
+          <dd>
+            Woods, C., Selway, M., Bikaun, T., Stumptner, M., & Hodkiewicz, M.
+            An ontology for maintenance activities and its application to data
+            quality. Semantic Web, (Preprint), 1-34.
+          </dd>
+        </dl>
+
+        <a href="provenance/provenance-en.html" target="_blank"
+          >Provenance of this page</a
+        >
+        <hr />
+      </div>
+      <div class="status">
+        <div>
+          <span>Ontology Specification</span>
+        </div>
+      </div>
+      <div id="toc"></div>
+
+      <!--OVERVIEW SECTION-->
+      <div id="overview">
+        <h2 id="overv" class="list">
+          Asset List Ontology: Overview
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        <span class="markdown">
+          This ontology has the following classes and properties.</span
+        >
+        <h4>Annotation Properties</h4>
+        <ul
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          class="hlist"
+        >
+          <li>
+            <a
+              href="#http://purl.obolibrary.org/obo/BFO_0000174"
+              title="http://purl.obolibrary.org/obo/BFO_0000174"
+            >
+              <span>b f o 0000174</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://purl.org/dc/elements/1.1/license"
+              title="http://purl.org/dc/elements/1.1/license"
+            >
+              <span>license</span>
+            </a>
+          </li>
+        </ul>
+        <h4>Named Individuals</h4>
+        <ul
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          class="hlist"
+        >
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001"
+            >
+              <span>flow meter 001</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001"
+            >
+              <span>motor 001</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001"
+            >
+              <span>oil 001</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001"
+            >
+              <span>pressure switch 001</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001"
+            >
+              <span>pump 001</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+            >
+              <span>pump 001 control system</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+            >
+              <span>pump 001 driver system</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+            >
+              <span>pump 001 lub system</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+            >
+              <span>pump 001 piping system</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+            >
+              <span>pump 001 unit</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001"
+            >
+              <span>seal 001</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001"
+              title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001"
+            >
+              <span>valve 001</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--CROSSREF SECTION-->
+      <div id="crossref">
+        <h2 id="crossreference" class="list">
+          Cross-reference for Asset List Ontology classes, object properties and
+          data properties
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        This section provides details for each class and property defined by
+        Asset List Ontology.
+        <div
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          id="annotationproperties"
+        >
+          <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+          <ul class="hlist">
+            <li>
+              <a
+                href="#http://purl.obolibrary.org/obo/BFO_0000174"
+                title="http://purl.obolibrary.org/obo/BFO_0000174"
+              >
+                <span>b f o 0000174</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://purl.org/dc/elements/1.1/license"
+                title="http://purl.org/dc/elements/1.1/license"
+              >
+                <span>license</span>
+              </a>
+            </li>
+          </ul>
+          <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000174">
+            <h3>
+              b f o 0000174<sup class="type-ap" title="annotation property"
+                >ap</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000174
+            </p>
+          </div>
+          <div class="entity" id="http://purl.org/dc/elements/1.1/license">
+            <h3>
+              license<sup class="type-ap" title="annotation property">ap</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#annotationproperties">Annotation Property ToC</a>
+              </span>
+            </h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/license</p>
+          </div>
+        </div>
+        <div
+          xmlns:widoco="https://w3id.org/widoco/vocab#"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          id="namedindividuals"
+        >
+          <h3 id="namedindividuals" class="list">Named Individuals</h3>
+          <ul class="hlist">
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001"
+              >
+                <span>flow meter 001</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001"
+              >
+                <span>motor 001</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001"
+              >
+                <span>oil 001</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001"
+              >
+                <span>pressure switch 001</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001"
+              >
+                <span>pump 001</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+              >
+                <span>pump 001 control system</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+              >
+                <span>pump 001 driver system</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+              >
+                <span>pump 001 lub system</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+              >
+                <span>pump 001 piping system</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+              >
+                <span>pump 001 unit</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001"
+              >
+                <span>seal 001</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001"
+                title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001"
+              >
+                <span>valve 001</span>
+              </a>
+            </li>
+          </ul>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001"
+          >
+            <h3>
+              flow meter 001<sup class="type-ni" title="named individual"
+                >ni</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#flow_meter_001
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter"
+                  >flowmeter</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001"
+          >
+            <h3>
+              motor 001<sup class="type-ni" title="named individual">ni</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#motor_001
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor"
+                  >motor</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001"
+          >
+            <h3>
+              oil 001<sup class="type-ni" title="named individual">ni</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#oil_001
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil"
+                  >oil</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001"
+          >
+            <h3>
+              pressure switch 001<sup class="type-ni" title="named individual"
+                >ni</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pressure_switch_001
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch"
+                  >pressure switch</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001"
+          >
+            <h3>
+              pump 001<sup class="type-ni" title="named individual">ni</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump"
+                  >pump</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+              <dt>has facts</dt>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000111"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000111"
+                  >b f o 0000111</a
+                >
+                <sup class="type-op" title="object property">op</sup>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+                  >pump 001 control system</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000111"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000111"
+                  >b f o 0000111</a
+                >
+                <sup class="type-op" title="object property">op</sup>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+                  >pump 001 driver system</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000111"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000111"
+                  >b f o 0000111</a
+                >
+                <sup class="type-op" title="object property">op</sup>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+                  >pump 001 lub system</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000111"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000111"
+                  >b f o 0000111</a
+                >
+                <sup class="type-op" title="object property">op</sup>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+                  >pump 001 piping system</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="http://purl.obolibrary.org/obo/BFO_0000111"
+                  target="_blank"
+                  title="http://purl.obolibrary.org/obo/BFO_0000111"
+                  >b f o 0000111</a
+                >
+                <sup class="type-op" title="object property">op</sup>
+                <a
+                  href="#http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+                  >pump 001 unit</a
+                >
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system"
+          >
+            <h3>
+              pump 001 control system<sup
+                class="type-ni"
+                title="named individual"
+                >ni</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_control_system
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#ControlAndMonitoringSystem"
+                  >control and monitoring system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system"
+          >
+            <h3>
+              pump 001 driver system<sup
+                class="type-ni"
+                title="named individual"
+                >ni</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_driver_system
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#DriverAndElectricalSystem"
+                  >driver and electrical system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system"
+          >
+            <h3>
+              pump 001 lub system<sup class="type-ni" title="named individual"
+                >ni</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_lub_system
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#LubricationSystem"
+                  >lubrication system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system"
+          >
+            <h3>
+              pump 001 piping system<sup
+                class="type-ni"
+                title="named individual"
+                >ni</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_piping_system
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PipingAndValvesSystem"
+                  >piping and valves system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit"
+          >
+            <h3>
+              pump 001 unit<sup class="type-ni" title="named individual"
+                >ni</sup
+              >
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#pump_001_unit
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/functional-breakdown-pump-ontology#PumpUnitSystem"
+                  >pump unit system</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001"
+          >
+            <h3>
+              seal 001<sup class="type-ni" title="named individual">ni</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#seal_001
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal"
+                  >mechanical seal</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="entity"
+            id="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001"
+          >
+            <h3>
+              valve 001<sup class="type-ni" title="named individual">ni</sup>
+              <span class="backlink">
+                back to <a href="#toc">ToC</a> or
+                <a href="#namedindividuals">Named Individual ToC</a>
+              </span>
+            </h3>
+            <p>
+              <strong>IRI:</strong>
+              http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-data#valve_001
+            </p>
+            <dl class="description">
+              <dt>belongs to</dt>
+              <dd>
+                <a
+                  href="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+                  target="_blank"
+                  title="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve"
+                  >valve</a
+                >
+                <sup class="type-c" title="class">c</sup>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div id="legend">
+          <h2>
+            Legend <span class="backlink"> back to <a href="#toc">ToC</a></span>
+          </h2>
+          <div class="entity">
+            <sup class="type-ni" title="Named Individuals">ni</sup>: Named
+            Individuals
+          </div>
+        </div>
+      </div>
+      <div id="acknowledgments">
+        <h2 id="ack" class="list">
+          Acknowledgments
+          <span class="backlink"> back to <a href="#toc">ToC</a></span>
+        </h2>
+        <p>
+          The authors would like to thank
+          <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing
+          <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL
+          Documentation Environment, which is used for representing the Cross
+          Referencing Section of this document and
+          <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for
+          developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the
+          program used to create the template used in this documentation.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
