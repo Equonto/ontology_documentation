@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#"
+    xml:base="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:core="http://www.industrialontologies.org/core/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:IOFAnnotationVocabulary="http://www.industrialontologies.org/IOFAnnotationVocabulary/">
+    <owl:Ontology
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology">
+        <owl:imports rdf:resource="http://www.industrialontologies.org/core/" />
+        <terms:license>Copyright 2022 Caitlin Woods, Matt Selway, Tyler Bikaun, Markus Stumptner,
+            Melinda Hodkiewicz
+
+            Permission is hereby granted, free of charge, to any person obtaining a copy of this
+            software and associated documentation files (the &quot;Software&quot;), to deal in the
+            Software without restriction, including without limitation the rights to use, copy,
+            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+            to permit persons to whom the Software is furnished to do so, subject to the following
+            conditions:
+            The above copyright notice and this permission notice shall be included in all copies or
+            substantial portions of the Software.
+
+            THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+            PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+            HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+            CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+            THE USE OR OTHER DEALINGS IN THE SOFTWARE.</terms:license>
+    </owl:Ontology>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel" />
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel" />
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://www.industrialontologies.org/core/MaterialArtifact -->
+
+    <owl:Class rdf:about="http://www.industrialontologies.org/core/MaterialArtifact" />
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+        <rdfs:subClassOf
+            rdf:resource="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor" />
+        <owl:disjointWith
+            rdf:resource="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch" />
+        <rdfs:label>Flowmeter</rdfs:label>
+        <skos:altLabel>Flow Meter</skos:altLabel>
+        <skos:prefLabel>Flowmeter</skos:prefLabel>
+    </owl:Class>
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+        <rdfs:label>Seal</rdfs:label>
+    </owl:Class>
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+        <rdfs:label>Motor</rdfs:label>
+    </owl:Class>
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+        <rdfs:label>Oil</rdfs:label>
+    </owl:Class>
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+        <rdfs:subClassOf
+            rdf:resource="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor" />
+        <rdfs:label>Pressure Switch</rdfs:label>
+        <skos:altLabel>Switch</skos:altLabel>
+        <skos:prefLabel>Pressure Switch</skos:prefLabel>
+    </owl:Class>
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+        <rdfs:label>Pump, Centrifugal</rdfs:label>
+    </owl:Class>
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+    </owl:Class>
+
+
+    <!--
+    http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve -->
+
+    <owl:Class
+        rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve">
+        <rdfs:subClassOf rdf:resource="http://www.industrialontologies.org/core/MaterialArtifact" />
+        <rdfs:label>Valve</rdfs:label>
+    </owl:Class>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses" />
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description
+                rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Flowmeter" />
+            <rdf:Description
+                rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#MechanicalSeal" />
+            <rdf:Description
+                rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Motor" />
+            <rdf:Description
+                rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Oil" />
+            <rdf:Description
+                rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#PressureSwitch" />
+            <rdf:Description
+                rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Pump" />
+            <rdf:Description
+                rdf:about="http://spec.equonto.org/ontology/maintenance-work-management/use-case/asset-list-ontology#Valve" />
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
